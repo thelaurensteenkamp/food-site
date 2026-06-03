@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script>
+      // Safe guard against browser extensions trying to overwrite window.fetch
+      // if it has only a getter inside sandboxed secure preview iframes
+      try {
+        if (window && window.fetch) {
+          const originalFetch = window.fetch;
+          let currentFetch = originalFetch;
+          Object.defineProperty(window, "fetch", {
+            get() {
+              return currentFetch;
+            },
+            set(value) {
+              currentFetch = value;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        }
+      } catch (e) {
+        console.warn("Unable to safely intercept window.fetch descriptor:", e);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

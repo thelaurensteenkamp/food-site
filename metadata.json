@@ -1,0 +1,6 @@
+{
+  "name": "Fast Food Restaurant",
+  "description": "A high-fidelity fast-food ordering website featuring a customizable menu, live checkout tracking, and an AI ordering assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
